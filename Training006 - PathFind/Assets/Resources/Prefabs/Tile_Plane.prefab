@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 1385582583
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4b92a0441606bd499fbf36994da18b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac3b9336e27c3f1458c6eb4f97a99718, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,9 @@ GameObject:
   - component: {fileID: 92893116363595788}
   - component: {fileID: 92893116363595790}
   - component: {fileID: 92893116363595791}
+  - component: {fileID: 6514999201612556560}
   m_Layer: 5
-  m_Name: Tile_Ocean
+  m_Name: Tile_Plane
   m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +168,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6514999201612556560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92893116363595789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35373fec3ff2d824a92b3399772b4aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &92893116805768505
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +345,7 @@ GameObject:
   - component: {fileID: 8390579978895945345}
   - component: {fileID: 3059908175186413419}
   m_Layer: 5
-  m_Name: Renderer
+  m_Name: Front_Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,7 +412,7 @@ SpriteRenderer:
   m_SortingLayerID: -1399423621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65f97617738bdcf40b2c6a3cc6fed0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da3e6bbb84c179140bc2ea270b6958bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
