@@ -1,21 +1,28 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class MapBoard : MonoBehaviour
 {
     private const string TERRAIN_MAP_OBJ_NAME = "TerrainGrid";
+    private const string OBSTACLE_MAP_OBJ_NAME = "ObstacleGrid";
 
     public Vector2Int MapCellSize { get; private set; } = default;
 
     public Vector2 MapCellGap {  get; private set; } = default;
 
     private TerrainMap terrainMap = default;
+    private ObstacleMap obstacleMap = default;
 
     private void Awake()
     {
         // { 매니저 스크립트를 초기화한다.
         ResManager.Instance.Create();
+
+        // PathFinder 초기화
+        PathFinder.Instance.Create();
+        PathFinder.Instance.mapBoard = this;
         // } 매니저 스크립트를 초기화한다.
 
         // { 맵에 지형을 초기화하여 배치한다.
@@ -24,6 +31,11 @@ public class MapBoard : MonoBehaviour
         MapCellSize = terrainMap.GetCellSize();
         MapCellGap = terrainMap.GetCellGap();
         // } 맵에 지형을 초기화하여 배치한다.
+
+        // { 맵에 지물을 초기화하여 배치한다.
+        obstacleMap = gameObject.FindChildComponent<ObstacleMap>(OBSTACLE_MAP_OBJ_NAME);
+        obstacleMap.InitAwake(this);
+        // } 맵에 지물을 초기화하여 배치한다.
 
     }
 
@@ -100,6 +112,10 @@ public class MapBoard : MonoBehaviour
         Vector2Int distance2D = Vector2Int.zero;
         distance2D.x = Mathf.RoundToInt(localDistance.x / MapCellGap.x);
         distance2D.y = Mathf.RoundToInt(localDistance.y / MapCellGap.y);
+        Debug.Log("로컬"+localDistance.x + " / " + localDistance.y);
+        Debug.Log("맵갭"+MapCellGap.x + " / " + MapCellGap.y);
+        Debug.Log("거리"+distance2D.x + " / " + distance2D.y);
+
         distance2D = GFunc.Abs(distance2D);
 
         return distance2D;

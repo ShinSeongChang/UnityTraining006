@@ -40,7 +40,7 @@ public class TerrainMap : TileMapController
 
         // { x 축 상의 두 타일과, y 축 상의 두 타일 사이의 로컬 포지션으로 타일 갭을 연산한다.
         mapCellGap = Vector2.zero;
-        mapCellGap.x = allTileObjs[0].transform.localPosition.x -
+        mapCellGap.x = allTileObjs[1].transform.localPosition.x -
             allTileObjs[0].transform.localPosition.x;
         mapCellGap.y = allTileObjs[mapCellSize.x].transform.localPosition.y -
             allTileObjs[0].transform.localPosition.y;
@@ -105,6 +105,7 @@ public class TerrainMap : TileMapController
                     break;
             }       // switch : 지형별로 다른 설정을 한다.
 
+            tempTerrain.SetupTerrain(mapController, terrainType, loopCnt);
             tempTerrain.transform.SetAsFirstSibling();
             allTerrains.Add(tempTerrain);
             loopCnt += 1;
