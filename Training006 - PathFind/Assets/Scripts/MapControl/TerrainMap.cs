@@ -30,6 +30,7 @@ public class TerrainMap : TileMapController
                 break;
                 // if : 첫번째 타일의 y 좌표와 달라지는 지점 전까지가 맵의 가로 셀 크기이다.
             }
+
         }
 
         // 전체 타일의 수를 맵의 가로 셀 크기로 나눈 값이 맵의 세로 셀 크기이다.
